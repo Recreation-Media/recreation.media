@@ -1,0 +1,129 @@
+/* Re:Creation Media: basic one-page site (Oct 2026).
+   Current mark: Family Stripes v2 logo (BRAND_ITERATION_LOG, 4 Aug) on the black
+   ground (Ryan, 18 Oct). The rebrand charter owns the next look: when BRAND_CANON.md
+   lands, swap assets/ and the tokens below, nothing else.
+   System fonts only: no third-party requests, so the privacy page stays true. */
+
+:root {
+  --bg: #0a0a0a;
+  --fg: #FAF8F3;       /* the wordmark's own bone */
+  --accent: #1B7FC4;   /* cerulean, first stripe */
+  --soft: rgba(250, 248, 243, 0.66);
+  --faint: rgba(250, 248, 243, 0.38);
+  --rule: rgba(250, 248, 243, 0.14);
+  --sans: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { background: var(--bg); color-scheme: dark; }
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+a { color: var(--fg); text-decoration: none; border-bottom: 1px solid var(--accent); }
+a:hover, a:focus-visible { border-bottom-color: var(--fg); }
+a:focus-visible { outline: 2px solid var(--fg); outline-offset: 3px; }
+
+/* ---------- home ---------- */
+
+.home {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  padding: 48px 16px;
+  text-align: center;
+}
+
+.home .stack { display: grid; gap: 28px; justify-items: center; }
+
+.logo { line-height: 0; }
+.logo img { width: min(560px, 86vw); height: auto; }
+
+.line {
+  font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+  line-height: 1.55;
+  max-width: 30em;
+  color: var(--soft);
+}
+
+.rule { width: 48px; height: 1px; background: var(--rule); }
+
+.facts { display: grid; gap: 14px; }
+.facts dt {
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--faint);
+  margin-bottom: 6px;
+}
+.facts dd { font-size: 1rem; }
+
+/* ---------- footer ---------- */
+
+footer {
+  padding: 24px 16px 32px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  justify-content: center;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+footer a { color: var(--faint); border-bottom-color: transparent; }
+footer a:hover, footer a:focus-visible { color: var(--fg); }
+
+/* ---------- legal pages ---------- */
+
+.doc {
+  flex: 1;
+  width: 100%;
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 56px 16px 32px;
+}
+
+.doc .back { display: inline-block; border-bottom: none; margin-bottom: 44px; line-height: 0; }
+.doc .back img { width: 200px; height: auto; }
+
+.doc h1 {
+  font-weight: 400;
+  font-size: clamp(2.2rem, 7vw, 3.2rem);
+  line-height: 1.05;
+  margin-bottom: 12px;
+}
+
+.doc .meta { color: var(--faint); font-size: 0.85rem; margin-bottom: 40px; }
+
+.doc h2 {
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--soft);
+  font-weight: 600;
+  margin: 44px 0 14px;
+  padding-top: 20px;
+  border-top: 1px solid var(--rule);
+}
+
+.doc p, .doc li { font-size: 1rem; line-height: 1.7; color: var(--fg); }
+.doc p + p { margin-top: 14px; }
+.doc ul, .doc ol { padding-left: 1.25em; display: grid; gap: 8px; margin-top: 10px; }
+.doc strong { font-weight: 600; }
+
+.summary {
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: 20px 22px;
+  margin-bottom: 8px;
+}
+.summary ul { margin-top: 0; }
